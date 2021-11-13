@@ -68,3 +68,33 @@ el-menu有router属性，点击el-menu-item时，会将el-menu-item中index作�
 
 :default-active绑定到route的path属性上，我们当前的页面就是router/index.js中的routes中的一个route，有path和name属性，我们在router/index.js中写好当前页面的path，就可以直接调用this.$route.path
 
+## comment-card
+
+主要是组件传参的应用
+
+```vue
+<el-card :style="{width: this.cardWidth}">
+  <div class="comment-time" style="color: #999">
+    <ClockCircleOutlined />
+    {{ cardData.date }}
+  </div>
+
+  <div class="content">
+    {{ cardData.content }}
+  </div>
+
+  <div class="reply-article">
+    回复帖子：{{this.cardData.articleTitle}}
+  </div>
+
+  <div style="display: flex; align-items: center; font-size: 16px">
+    <LikeOutlined :style="{color:likeColor}" @click="like()"></LikeOutlined>
+    <span style="color: #999; margin-left: 5px">{{ cardData.likes }}</span>
+  </div>
+
+</el-card>
+```
+
+## like
+
+todo
